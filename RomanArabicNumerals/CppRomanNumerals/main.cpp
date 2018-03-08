@@ -2,6 +2,8 @@
 #include <string>
 #include <sstream>
 #include <ctype.h>
+#include <stdlib.h>
+
 using namespace std;
 
 static int arabicValues[] = {1,4,5,9,10,40,50,90,100,400,500,900,1000};
@@ -110,10 +112,9 @@ int main(int argc, char* argv[])
     stringstream ss;
     ss << argv[1];
     ss >> str;                                                      // TODO: REMOVE BULLSHIT
-    if (isdigit(str[0]))
+    if (atoi(argv[1]) != 0)
     {
-        ss << str;
-        ss >> num;
+        num = atoi(argv[1]);
         cout << Arabic2Roman(num);
     }
     else
